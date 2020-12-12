@@ -32,7 +32,7 @@ class ConfigBase{
     create(){
         if (false == this.checkPrivateData(this.template)) {console.error("privateData check failed."); return false}
         // 校验通过后再执行
-        this.start()
+        return this.start()
     }
 
     /**
