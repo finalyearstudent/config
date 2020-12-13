@@ -60,7 +60,7 @@ class ConfigBase{
      * @description bdf转为16进制
      */
     BDF2HEX(bdf){
-        if (/[\d|a-z|A-Z]+:[\d|a-z|A-Z]+\.[\d|a-z|A-Z]/.test(bdf)) {
+        if (/^[0-9|a-f|A-F]{1,2}:[0-1]?[0-9|a-f|A-F]\.[0-7]{1}$/.test(bdf)) {
             let colonIndex = bdf.indexOf(':')
             let commaIndex = bdf.indexOf('.')
             let Bus = bdf.substring(0, colonIndex)
@@ -92,6 +92,7 @@ class ConfigBase{
  * @version 1.0.0
  */
 class ThreadConfig extends ConfigBase{
+    // 传递的privateData的模板
     template = {
         "sectionName" : "string",
         // 线程对应的bdf号
@@ -137,7 +138,6 @@ class ThreadConfig extends ConfigBase{
             index = parseInt(index, 10)
             configText += this.createKeyAndValueString(this.#threadPrefix + this.OCT2DEX(index), this.#hex_prefix + this.BDF2HEX(allBdfList[index]))
         }
-        console.log(`ThreadConfig create success. \n${configText}`)
         return configText
     }
 }
