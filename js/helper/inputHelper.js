@@ -14,4 +14,4 @@ function getAllRelativeBDF(input) {
 
 }
 
-export {saveAllBDF, getAllRelativeBDF}
+export { saveAllBDF, getAllRelativeBDF }

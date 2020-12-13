@@ -1,41 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
     <title>配置文件生成工具</title>
 </head>
+
 <body>
-    <div>
-        <!-- 配置文件核心，型号，是否高端 -->
-    </div>
-
-    <div id="thread_cfg" class="cfg">
-        <!-- 线程配置项 -->
-        <div> section name : thread_cfg </div>
-        <div id="thread_cfg_rp" class="unit" num=0>
-            <div>请添加非系统盘root port的bdf：</div>
-            <div id="thread_cfg_rp_click" title="添加一个新配置项">+</div>
+    <div class="main">
+        <div id="type_cfg" class="cfg">
+            <!-- 配置文件核心，型号，是否高端 -->
+            <div class="cfg_head" title="">单板配置</div>
+            <div id="type_cfg_board" class="unit" num=0>
+                <!-- 注意标题 -->
+                <div class="unit_head" title="">单板型号：
+                    <!-- 注意id -->
+                    <span id="type_cfg_board_click" title="添加一个新配置项" class="click">+</span>
+                </div>
+            </div>
+            <div id="type_cfg_backboard" class="unit" num=0>
+                <!-- 注意标题 -->
+                <div class="unit_head" title="">背板型号：
+                    <!-- 注意id -->
+                    <span id="type_cfg_backboard_click" title="添加一个新配置项" class="click">+</span>
+                </div>
+            </div>
         </div>
-        <div id="thread_cfg_sysdisk" class="unit" num=0>
-            <div>请添加系统盘的bdf：</div>
-            <div id="thread_cfg_sysdisk_click" title="添加一个新配置项">+</div>
-        </div>
-        <div id="thread_cfg_threads" class="unit" num=0>
-            <div>请添加非root port和系统盘的线程bdf：</div>
-            <div id="thread_cfg_threads_click" title="添加一个新配置项">+</div>
-        </div>
-    </div>
 
-    <div id="cfg_commit">commit</div>
+        <div id="thread_cfg" class="cfg">
+            <!-- 线程配置项 -->
+            <div class="cfg_head" title="">thread_cfg </div>
+            <!-- 注意id -->
+            <div id="thread_cfg_rp" class="unit" num=0>
+                <!-- 注意标题 -->
+                <div class="unit_head" title="">非系统盘root port的bdf：
+                    <!-- 注意id -->
+                    <span id="thread_cfg_rp_click" title="添加一个新配置项" class="click">+</span>
+                </div>
+            </div>
+            <!-- 注意id -->
+            <div id="thread_cfg_sysdisk" class="unit" num=0>
+                <!-- 注意标题 -->
+                <div class="unit_head" title="">系统盘root port的bdf：
+                    <!-- 注意id -->
+                    <span id="thread_cfg_sysdisk_click" title="添加一个新配置项" class="click">+</span>
+                </div>
+            </div>
+            <!-- 注意id -->
+            <div id="thread_cfg_threads" class="unit" num=0>
+                <!-- 注意标题 -->
+                <div class="unit_head" title="">非root port和系统盘的线程bdf：
+                    <!-- 注意id -->
+                    <span id="thread_cfg_threads_click" title="添加一个新配置项" class="click">+</span>
+                </div>
+            </div>
+        </div>
 
-    <!-- 配置文件生成结果 -->
-    <div class="result" id="result">
-        <div class="title">配置文件内容</div>
-        <div class="text"></div>
+        <div id="cfg_commit" class="cfg_commit">生成配置文件</div>
+
+        <!-- 配置文件生成结果 -->
+        <div class="result" id="result">
+            <div class="title">配置文件内容</div>
+            <div class="text"></div>
+        </div>
     </div>
 
     <script src="js/lib/jquery-3.5.1.min.js"></script>
     <script src="js/index.js" type="module"></script>
 </body>
+
 </html>

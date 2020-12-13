@@ -9,4 +9,4 @@ function createConfig(sectionName, privateData) {
     return threadConfig.create()
 }
 
-export {createConfig}
+export { createConfig }
